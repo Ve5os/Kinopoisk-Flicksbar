@@ -1,4 +1,4 @@
-# Kinopoisk → Kinokino
+# Kinopoisk → Flicksbar
 
 Пользовательский скрипт (userscript) для Tampermonkey, который добавляет на страницы Кинопоиска кнопку **«Смотреть на Flicksbar»** — рядом с кнопкой «Буду смотреть». По клику открывает ту же страницу фильма на [kinokino.red](https://kinokino.red) в новой вкладке, сохраняя путь и все параметры URL.
 
