@@ -29,7 +29,7 @@ https://kinokino.red/film/1234567/?ysclid=abc
 **Способ А — вручную:**
 
 1. Откройте панель Tampermonkey → **«Создать новый скрипт»**.
-2. Удалите шаблон и вставьте содержимое файла [`Kinopoisk → Flicksbar-1.3.user.js`](./Kinopoisk → Flicksbar-1.3.user.js).
+2. Удалите шаблон и вставьте содержимое файла `Kinopoisk → Flicksbar-1.3.user.js`
 3. **Ctrl+S** (Cmd+S на Mac) — сохранить.
 4. Готово.
 
