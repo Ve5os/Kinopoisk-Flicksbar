@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Kinopoisk → Flicksbar
 // @namespace    http://tampermonkey.net/
-// @version      1.3
-// @description  Добавляет справа от «Буду смотреть» кнопку-клон с иконкой play, ведущую на kinokino.red
+// @version      1.4
+// @description  Добавляет справа от «Буду смотреть» и «Купить и смотреть» кнопку-клон с иконкой play, ведущую на kinokino.red
 // @match        https://www.kinopoisk.ru/*
 // @match        https://kinopoisk.ru/*
 // @grant        none
@@ -16,13 +16,19 @@
     const MARK = 'data-kk-clone';
     const WRAP = 'data-kk-wrap';
 
+    // Тексты кнопок-«оригиналов», рядом с которыми нужно вставить клон
+    const ORIGINAL_TEXTS = [
+        'Буду смотреть',
+        'Купить и смотреть'
+    ];
+
     // Ищем кнопки по ТЕКСТУ (классы/title обфусцированы)
     function findOriginals() {
         const result = [];
         for (const el of document.querySelectorAll('button, [role="button"]')) {
             if (el.hasAttribute(MARK)) continue;
             const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
-            if (text === 'Буду смотреть') result.push(el);
+            if (ORIGINAL_TEXTS.includes(text)) result.push(el);
         }
         return result;
     }
