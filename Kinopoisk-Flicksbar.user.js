@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Kinopoisk → Flicksbar
 // @namespace    http://tampermonkey.net/
-// @version      1.5
-// @description  Добавляет справа от «Буду смотреть», «Купить и смотреть» и «Подключить и смотреть» кнопку-клон с иконкой play, ведущую на kinokino.red
+// @version      1.6
+// @description  Добавляет справа от «Буду смотреть», «Купить и смотреть» и «Подключить и смотреть» кнопку-клон с иконкой play, ведущую на kinokino.red (только на страницах фильма/сериала)
 // @match        https://www.kinopoisk.ru/*
 // @match        https://kinopoisk.ru/*
 // @grant        none
@@ -22,6 +22,11 @@
         'Купить и смотреть',
         'Подключить и смотреть'
     ];
+
+    // Работаем только на страницах фильма/сериала: /film/... или /series/...
+    function isFilmPage() {
+        return /^\/(film|series)\//.test(location.pathname);
+    }
 
     // Ищем кнопки по ТЕКСТУ (классы/title обфусцированы)
     function findOriginals() {
@@ -91,6 +96,8 @@
     }
 
     function inject() {
+        if (!isFilmPage()) return;
+
         for (const original of findOriginals()) {
             const parent = original.parentNode;
             if (!parent) continue;
