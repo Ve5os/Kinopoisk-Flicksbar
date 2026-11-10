@@ -19,7 +19,7 @@ https://kinokino.red/film/1234567/?ysclid=abc
 
 1. Установите расширение [Tampermonkey](https://www.tampermonkey.net/) (Chrome / Edge / Opera / Firefox / Safari).
 2. Откройте панель Tampermonkey → **«Создать новый скрипт»**.
-3. Удалите шаблон, вставьте содержимое файла `Kinopoisk → Flicksbar.user.js` и сохраните (**Ctrl+S** / **Cmd+S**).
+3. Удалите шаблон, вставьте содержимое файла `Kinopoisk-Flicksbar.user.js` и сохраните (**Ctrl+S** / **Cmd+S**).
 
 Либо: откройте файл скрипта в репозитории, нажмите **Raw** — Tampermonkey предложит установку.
 
